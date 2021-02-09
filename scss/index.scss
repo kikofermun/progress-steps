@@ -1,4 +1,14 @@
 $color-success: #0a0;
+$color: #aaa;
+$line-top: 35%;
+$line-left: 60%;
+$line-width: 78%;
+$line-border-width: 1px;
+$circle-width: 10%;
+$circle-padding: 5%;
+$circle-margin: 5%;
+$circle-radius: 100%;
+$circle-border-width: 2px;
 
 html, body{
     margin: 0px;
@@ -14,23 +24,22 @@ html, body{
         position: relative;
         &::before{
             content: counter( step );
-            color: #aaa;
+            color: $color;
             counter-increment: step;
             display: block;
-            width: 10%;
-            min-width: 5%;
-            padding: 5%;
-            margin: 5% auto;
-            border: 2px solid #aaa;
-            border-radius: 100%;
+            width: $circle-width;
+            padding: $circle-padding;
+            margin: $circle-margin auto;
+            border: $circle-border-width solid $color;
+            border-radius: $circle-radius;
         }
         &::after{
             content: "";
             position: absolute;
-            top: 35%;
-            left: 60%;
-            width: 78%;
-            border: 1px solid #aaa;
+            top: $line-top;
+            left: $line-left;
+            width: $line-width;;
+            border: $line-border-width solid $color;
         }
         &.success{
             &::before, &::after{
