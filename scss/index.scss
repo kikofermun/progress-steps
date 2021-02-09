@@ -1,0 +1,47 @@
+$color-success: #0a0;
+
+html, body{
+    margin: 0px;
+    counter-reset: step;
+}
+
+.steps{
+    display: flex;
+    justify-content: space-around;
+    .step{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        &::before{
+            content: counter( step );
+            color: #aaa;
+            counter-increment: step;
+            display: block;
+            width: 10%;
+            min-width: 5%;
+            padding: 5%;
+            margin: 5% auto;
+            border: 2px solid #aaa;
+            border-radius: 100%;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            top: 35%;
+            left: 60%;
+            width: 78%;
+            border: 1px solid #aaa;
+        }
+        &.success{
+            &::before, &::after{
+                border-color: $color-success;
+                color: $color-success;
+            }
+        }
+        &:last-child{
+            &::after{
+                border: 0px;
+            }
+        }
+    }
+}
